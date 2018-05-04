@@ -16,7 +16,7 @@
             <form method="GET" action="prueba.php">
                 <button type="submit" class="btn-primary">Agregar Alumno</button>
             </form>
-            <form method="GET" action="Modificar.php">
+            <form method="GET" action="inConsul.php">
                 <button type="submit" class="btn-warning">Consultar Alumno</button>
             </form>
         </div>

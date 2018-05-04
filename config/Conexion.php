@@ -1,5 +1,6 @@
 <?php
 class ConfigBD {
+    
     function Combo(){
         $conexion = new ConfigBD();
         $objConexion = $conexion->getConexion();
@@ -83,53 +84,11 @@ class ConfigBD {
         }
     }
     
-    function getCentrosW(){
-        $taller = $_GET['taller'];
-        $conexion = new ConfigBD();
-        $objConexion = $conexion->getConexion();
-        try{
-            $taller;
-            $query = "SELECT * FROM centros WHERE Telebachillerato =" . $taller;
-            $resultadoConsulta = $objConexion->query($query);
-            if ($resultadoConsulta->num_rows>0){
-                
-                echo "<table aling=\"center\" border=\"1\">";
-                    echo "<tr>";
-                        echo "<td>Clave</td>";
-                        echo "<td>Telebachillerato</td>";
-                        echo "<td>Centro</td>";
-                        echo "<td>Municipio</td>";
-                        echo "<td>Encargado</td>";
-                        echo "<td>Correo</td>";
-                    echo "<tr>";
-                    
-                while ($row = $resultadoConsulta->fetch_assoc()){
-                    echo "<tr>";
-                        echo "<td>" . $row["Clave"] . "</td>";
-                        echo "<td>" . $row["Telebachillerato"] . "</td>";
-                        echo "<td>" . $row["Centro"] . "</td>";
-                        echo "<td>" . $row["Municipio"] . "</td>";
-                        echo "<td>" . $row["Encargado"] . "</td>";
-                        echo "<td>" . $row["Correo"] . "</td>";
-                    echo "</tr>";
-                }
-                
-            }else{
-                echo "Consulta sin registros";
-            }
-            
-            echo "</table>";
-            
-        }catch (Exception $e){
-            echo $e;
-        }
-    }
-    
     function getAlumnos(){
         $conexion = new ConfigBD();
         $objConexion = $conexion->getConexion();
         try{
-            $query = "SELECT * FROM alumnos WHERE Telebachillerato=";
+            $query = "SELECT * FROM alumnos";
             $resultadoConsulta = $objConexion->query($query);
             if ($resultadoConsulta->num_rows>0){
                 echo "<table aling=\"center\" border=\"1\">";
@@ -172,6 +131,47 @@ class ConfigBD {
             echo $e;
         }
     }
-  
+    
+    function filTaller($taller){ 
+        echo $taller;
+        $conexion = new ConfigBD();
+        $objConexion = $conexion->getConexion();
+        try{
+            $query = "SELECT * FROM alumnos WHERE Telebachillerato = '" . $taller ."'";
+            //$query = "SELECT * FROM centros WHERE Telebachillerato = 'Telebachillerato Comunitario Silao de la Victoria' ";
+            $resultadoConsulta = $objConexion->query($query);
+            if ($resultadoConsulta->num_rows>0){
+                
+                echo "<table aling=\"center\" border=\"1\">";
+                    echo "<tr>";
+                        echo "<td>Clave</td>";
+                        echo "<td>Telebachillerato</td>";
+                        echo "<td>Centro</td>";
+                        echo "<td>Municipio</td>";
+                        echo "<td>Encargado</td>";
+                        echo "<td>Correo</td>";
+                    echo "<tr>";
+                    
+                while ($row = $resultadoConsulta->fetch_assoc()){
+                    echo "<tr>";
+                        echo "<td>" . $row["Clave"] . "</td>";
+                        echo "<td>" . $row["Telebachillerato"] . "</td>";
+                        echo "<td>" . $row["Centro"] . "</td>";
+                        echo "<td>" . $row["Municipio"] . "</td>";
+                        echo "<td>" . $row["Encargado"] . "</td>";
+                        echo "<td>" . $row["Correo"] . "</td>";
+                    echo "</tr>";
+                }
+                
+            }else{
+                echo "Consulta sin registros";
+            }
+            
+            echo "</table>";
+            
+        }catch (Exception $e){
+            echo $e;
+        }
+    }
 }
 ?>

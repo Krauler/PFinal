@@ -133,33 +133,42 @@ class ConfigBD {
     }
     
     function filTaller($taller){ 
-        echo $taller;
         $conexion = new ConfigBD();
         $objConexion = $conexion->getConexion();
         try{
             $query = "SELECT * FROM alumnos WHERE Telebachillerato = '" . $taller ."'";
-            //$query = "SELECT * FROM centros WHERE Telebachillerato = 'Telebachillerato Comunitario Silao de la Victoria' ";
+            //$query = "SELECT * FROM alumnos WHERE Telebachillerato = 'Telebachillerato Comunitario Jerecuaro - El Tepozan' ";
             $resultadoConsulta = $objConexion->query($query);
             if ($resultadoConsulta->num_rows>0){
                 
                 echo "<table aling=\"center\" border=\"1\">";
                     echo "<tr>";
-                        echo "<td>Clave</td>";
-                        echo "<td>Telebachillerato</td>";
-                        echo "<td>Centro</td>";
-                        echo "<td>Municipio</td>";
-                        echo "<td>Encargado</td>";
-                        echo "<td>Correo</td>";
+                        echo "<th>Matricula</th>";
+                        echo "<th>Telebachillerato</th>";
+                        echo "<th>Estatus</th>";
+                        echo "<th>Nombre</th>";
+                        echo "<th>Paterno</th>";
+                        echo "<th>Materno</th>";
+                        echo "<th>Genero</th>";
+                        echo "<th>Generacion</th>";
+                        echo "<th>Municipio</th>";
+                        echo "<th>Pais</th>";
+                        echo "<th>Fecha</th>";
                     echo "<tr>";
                     
                 while ($row = $resultadoConsulta->fetch_assoc()){
                     echo "<tr>";
-                        echo "<td>" . $row["Clave"] . "</td>";
+                        echo "<td>" . $row["Matricula"] . "</td>";
                         echo "<td>" . $row["Telebachillerato"] . "</td>";
-                        echo "<td>" . $row["Centro"] . "</td>";
+                        echo "<td>" . $row["Estatus"] . "</td>";
+                        echo "<td>" . $row["Nombre"] . "</td>";
+                        echo "<td>" . $row["Paterno"] . "</td>";
+                        echo "<td>" . $row["Materno"] . "</td>";
+                        echo "<td>" . $row["Genero"] . "</td>";
+                        echo "<td>" . $row["Generacion"] . "</td>";
                         echo "<td>" . $row["Municipio"] . "</td>";
-                        echo "<td>" . $row["Encargado"] . "</td>";
-                        echo "<td>" . $row["Correo"] . "</td>";
+                        echo "<td>" . $row["Pais"] . "</td>";
+                        echo "<td>" . $row["Fecha"] . "</td>";
                     echo "</tr>";
                 }
                 

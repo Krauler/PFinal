@@ -13,7 +13,7 @@
 <body>
     <div class="ContGcol-sm-12">
         <div class="ContBtns">
-            <form method="GET" action="prueba.php">
+            <form method="GET" action="Insertar.php">
                 <button type="submit" class="btn-primary">Agregar Alumno</button>
             </form>
             <form method="GET" action="inConsul.php">

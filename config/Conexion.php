@@ -1,12 +1,11 @@
 <?php
 class ConfigBD {
-    
     function Combo(){
         $conexion = new ConfigBD();
         $objConexion = $conexion->getConexion();
         $query = "SELECT * FROM centros";
         $resultadoConsulta = $objConexion->query($query);
-        echo "<select id=\"Escuela\" onchange=\"Show();\">";
+        echo "<select id=\"Escuela\" name=\"Escuela\" onchange=\"Show();\">";
         echo "<option>";
         echo "Seleccionar Telebachillerato";
         echo "</option>";
@@ -125,7 +124,6 @@ class ConfigBD {
             }else{
                 echo "Consulta sin registros";
             }
-            
             echo "</table>";
         }catch (Exceptison $e){
             echo $e;
@@ -179,6 +177,34 @@ class ConfigBD {
             echo "</table>";
             
         }catch (Exception $e){
+            echo $e;
+        }
+    }
+    
+    function postAlumnos(){
+        $conexion = new ConfigBD();
+        $objConexion = $conexion->getConexion();
+        
+        $Matricula = $_POST['Matricula'];
+        $Telebachillerato = $_POST['Escuela'];
+        $Estatus = $_POST['Estatus'];
+        $Nombre = $_POST['Nombre'];
+        $Paterno = $_POST['Paterno'];
+        $Materno = $_POST['Materno'];
+        $Genero = $_POST['Genero'];
+        $Generacion = $_POST['Generacion'];
+        $Municipio = $_POST['Municipio'];
+        $Pais = $_POST['Pais'];
+        $Fecha = $_POST['Fecha'];
+        echo $Telebachillerato;
+        try{
+            $query = "INSERT INTO alumnos (Matricula, Telebachillerato, Estatus, Nombre, Paterno, Materno, Genero, Generacion, Municipio, Pais, Fecha) VALUES ('". $Matricula . "','". $Telebachillerato ."','". $Estatus ."','". $Nombre ."','". $Paterno ."','". $Materno ."','". $Genero ."','". $Generacion ."','". $Municipio ."','". $Pais ."','". $Fecha ."')";
+            if ($objConexion->query($query) === TRUE) {
+                    echo "Registro Agregado";
+                } else {
+                    echo "Error: " . $query . "<br>" . $conexion->error;
+                }
+        }catch (Exceptison $e){
             echo $e;
         }
     }

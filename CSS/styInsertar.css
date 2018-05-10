@@ -1,6 +1,14 @@
 *{
     margin: 0;
-    padding: 0;
+    padding: 0;    
+}
+
+body{
+    background-color: #F1F1F1;
+    background-image: url(../IMG/back2.jpg);
+    background-repeat: round;
+    background-size: contain;
+    font-family: 'Eagle Lake';
 }
 
 .contGral Form{
@@ -13,18 +21,24 @@
     padding-right: 30%;
 }
 
+h1{
+    margin-bottom: 30px;
+    text-align: center;
+    border-color: white;
+    background-color: rgba(255,255,255,.8);
+}
+
 Form{
-    background-color: cadetblue;
+    background-color: #0A4F8A;
     color: white;
     font-weight: 600;
-    padding-bottom: 20px;
     -webkit-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 13px 0px rgba(0,0,0,0.75);
 }
 
 Form div{
-    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 Form input{
@@ -37,12 +51,51 @@ Form select{
     height: 30px;
 }
 
-form button {
+Form button {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15px;
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 button{
     padding: 10px 15px;
+}
+
+.btn{
+    cursor: pointer;
+}
+
+#btnAdd{
+    background-color: #1E82D6;
+    border-width: 4px;
+    transition: ease-in-out .4s;
+}
+
+#btnAdd:hover{
+    background-color: white;
+    border-color: #1E82D6;
+    border-width: 4px;
+    transition: ease-in-out .4s;
+}
+
+#btnCancelar{
+    background-color: #DD3B35;
+    border-width: 4px;
+    transition: ease-in-out .4s;
+}
+
+#btnCancelar:hover{
+    background-color: white;
+    border-color: #DD3B35;
+    border-width: 4px;
+    transition: ease-in-out .4s;
+}
+
+p{
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #D68E1E;
+    background-color: rgba(255,255,255,1);
 }

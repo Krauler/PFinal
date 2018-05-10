@@ -4,16 +4,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Eagle Lake' rel='stylesheet'>
+    
     <link href="CSS/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="CSS/styInsertar.css" type="text/css" rel="stylesheet">
-    <title>Agregar un nuevo registro</title>
+    <title>Agregar</title>
 </head>
 
 <body>
 
     <div class="col-sm-12 contGral">
-        <h1></h1>
         <div class="col-sm-12 contForm">
+            <h1>Agregr alumno(s)</h1>
             <form class="row col-sm-12" method="POST" action="postAlumnos.php">
                 <div class="col-sm-5">Matricula</div>
                 <div class="col-sm-7"><input name="Matricula" type="text"></div>
@@ -54,11 +56,12 @@
                 <div class="col-sm-5">Fecha</div>
                 <div class="col-sm-7"><input name="Fecha" type="text"></div>
                 
-                <button type="submit">Agregar</button>
-                <button onclick="limpiar()">Cancelar</button>
+                <button id="btnAdd" class="btn" type="submit">Agregar</button>
+                <button id="btnCancelar" class="btn" onclick="limpiar()">Cancelar</button>
                 
             </form>
         </div>
+        <p>**La fecha tendra que ser introducida en el siguiente formato dia/mes/a&ntilde;o</p>
     </div>
     
     <script type="text/javascript">

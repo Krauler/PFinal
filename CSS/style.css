@@ -19,6 +19,10 @@ body{
     margin-right: auto;
 }
 
+Form{
+    margin-bottom: 70px;
+}
+
 button{
     padding: 10px 5px;
     font-weight: 700;

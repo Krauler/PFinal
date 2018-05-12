@@ -92,17 +92,17 @@ class ConfigBD {
             if ($resultadoConsulta->num_rows>0){
                 echo "<table aling=\"center\" border=\"1\">";
                     echo "<tr>";
-                        echo "<td>Matricula</td>";
-                        echo "<td>Telebachillerato</td>";
-                        echo "<td>Estatus</td>";
-                        echo "<td>Nombre</td>";
-                        echo "<td>Paterno</td>";
-                        echo "<td>Materno</td>";
-                        echo "<td>Genero</td>";
-                        echo "<td>Generacion</td>";
-                        echo "<td>Municipio</td>";
-                        echo "<td>Pais</td>";
-                        echo "<td>Fecha</td>";
+                        echo "<th>Matricula</th>";
+                        echo "<th>Telebachillerato</th>";
+                        echo "<th>Estatus</th>";
+                        echo "<th>Nombre</th>";
+                        echo "<th>Paterno</th>";
+                        echo "<th>Materno</th>";
+                        echo "<th>Genero</th>";
+                        echo "<th>Generacion</th>";
+                        echo "<th>Municipio</th>";
+                        echo "<th>Pais</th>";
+                        echo "<th>Fecha</th>";
                     echo "<tr>";
                     
                 while ($row = $resultadoConsulta->fetch_assoc()){

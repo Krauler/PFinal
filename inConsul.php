@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli" />
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"> 
 
     <link href="CSS/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="css/inConsulta.css" type="text/css" rel="stylesheet">
@@ -21,7 +21,7 @@
             $objConexion = $conexion->Combo();
             ?>
         </div>
-
+        
         <div class="col-sm-12">
             <form method="POST" action="conSQL.php" target="_blank">
                 <input id="Taller" type="text" name="Taller" style="display:none">

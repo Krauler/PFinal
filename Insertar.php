@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Eagle Lake' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"> 
     
     <link href="CSS/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="CSS/styInsertar.css" type="text/css" rel="stylesheet">
@@ -17,17 +17,19 @@
         <div class="col-sm-12 contForm">
             <h1>Agregr alumno(s)</h1>
             <form class="row col-sm-12" method="POST" action="postAlumnos.php">
-                <div class="col-sm-5">Matricula</div>
-                <div class="col-sm-7"><input name="Matricula" type="text"></div>
-
                 <div class="col-sm-5">Telebachillerato</div>
-                <div class="col-sm-5">
+                <div class="col-sm-7">
                     <?php
                     include_once("config/Conexion.php");
                     $conexion = new ConfigBD();
                     $objConexion = $conexion->Combo();
                     ?>
                 </div>
+                
+                <div class="col-sm-5">Matricula</div>
+                <div class="col-sm-7"><input name="Matricula" type="text"></div>
+
+               
 
                 <div class="col-sm-5">Estatus</div>
                 <div class="col-sm-7"><input name="Estatus" type="text"></div>

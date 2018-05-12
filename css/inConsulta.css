@@ -4,7 +4,7 @@
 }
 
 body{
-    font-family: 'Eagle Lake';
+    font-family: 'Slabo 27px', serif;
 }
 
 .btn{
@@ -39,4 +39,9 @@ th{
 
 tr:hover{
     background-color: #8fc4ef;
+}
+
+.btnTable{
+    background-color: white;
+    border: 0px;
 }
